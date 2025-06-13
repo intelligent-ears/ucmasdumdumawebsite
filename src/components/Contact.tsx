@@ -16,16 +16,28 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
+  
+    try {
+      const response = await fetch('http://localhost:5174/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          childName: formData.name,
+          age: formData.age,
+          email: formData.email,
+          phone: formData.phone,
+          interests: formData.message
+        })
+      });
+  
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Submission failed');
+      }
+  
+      setIsSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -33,9 +45,16 @@ const Contact = () => {
         age: '',
         message: ''
       });
-    }, 3000);
+  
+      // Optionally auto-hide the thank-you message
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (error) {
+      alert((error as Error).message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
