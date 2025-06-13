@@ -18,7 +18,8 @@ const Contact = () => {
     setIsSubmitting(true);
   
     try {
-      const response = await fetch('http://localhost:5174/submit', {
+      // Use relative path for Vercel API route
+      const response = await fetch('/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
