@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle, Star, Quote } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,47 +15,38 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-  
-    try {
-      // Use relative path for Vercel API route
-      const response = await fetch('/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          childName: formData.name,
-          age: formData.age,
-          email: formData.email,
-          phone: formData.phone,
-          interests: formData.message
-        })
-      });
-  
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Submission failed');
-      }
-  
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        age: '',
-        message: ''
-      });
-  
-      // Optionally auto-hide the thank-you message
-      setTimeout(() => setIsSubmitted(false), 3000);
-    } catch (error) {
-      alert((error as Error).message);
-    } finally {
-      setIsSubmitting(false);
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        age: formData.age,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Submission failed');
     }
-  };
+
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+    setTimeout(() => setIsSubmitted(false), 3000);
+
+  } catch (error) {
+    alert('Error submitting form. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -316,9 +308,11 @@ const Contact = () => {
                 <p className="text-white/80 mb-4">
                   
                 </p>
+                <Link to="https://maps.app.goo.gl/gptER4tHTc1LkrgGA">
                 <button className="bg-[#FFD60A] text-[#03045E] px-6 py-2 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105">
                   Get Directions
                 </button>
+                </Link>
               </div>
             </div>
 
@@ -463,9 +457,12 @@ const Contact = () => {
               Book your visit today and see the difference abacus learning can make.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="https://ucmasdumduma.vercel.app/#contact">
               <button className="bg-[#FFD60A] text-[#03045E] px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105">
                 Book visit
               </button>
+            </Link>
+
               <button className="border-2 border-[#FFD60A] text-[#FFD60A] px-8 py-3 rounded-full font-semibold hover:bg-[#FFD60A] hover:text-[#03045E] transition-all duration-300 transform hover:scale-105">
                 Download Brochure
               </button>
