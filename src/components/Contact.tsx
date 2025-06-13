@@ -463,11 +463,9 @@ const Contact = () => {
               Book your visit today and see the difference abacus learning can make.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://ucmasdumduma.vercel.app/#contact" target="_blank" rel="noopener noreferrer">
               <button className="bg-[#FFD60A] text-[#03045E] px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105">
                 Book visit
               </button>
-                /a>
               <button className="border-2 border-[#FFD60A] text-[#FFD60A] px-8 py-3 rounded-full font-semibold hover:bg-[#FFD60A] hover:text-[#03045E] transition-all duration-300 transform hover:scale-105">
                 Download Brochure
               </button>
