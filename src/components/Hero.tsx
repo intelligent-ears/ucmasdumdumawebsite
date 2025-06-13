@@ -43,7 +43,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
                 <button className="group bg-[#FFD60A] text-[#03045E] px-8 py-4 rounded-full font-semibold hover:bg-[#FFD60A]/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center"
-                 onClick={() => window.open('https://ucmasdumduma.vercel.app/#contact', '_blank')}>
+                 onClick={() => window.open('#contact', '_blank')}>
                   Book Visit Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>

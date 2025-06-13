@@ -461,7 +461,7 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
   className="bg-[#FFD60A] text-[#03045E] px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105"
-  onClick={() => window.open('https://ucmasdumduma.vercel.app/#contact', '_blank')}
+  onClick={() => window.open('#contact', '_blank')}
 >
   Book visit
 </button>
