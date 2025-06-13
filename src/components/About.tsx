@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Brain, Target, Award, BookOpen } from 'lucide-react';
+
 
 const About = () => {
   const features = [

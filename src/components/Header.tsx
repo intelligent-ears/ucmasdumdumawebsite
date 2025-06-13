@@ -39,7 +39,7 @@ const Header = () => {
           
         </div>
         <img
-          src="src/components/logoucmas.png" // replace with actual path or import
+          src="./src/assets/logoucmas.png" // replace with actual path or import
           alt="Small Logo"
           className="h-[48px] w-[150px]"
 

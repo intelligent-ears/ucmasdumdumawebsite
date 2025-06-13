@@ -29,7 +29,7 @@ const Hero = () => {
             <div className="animate-slide-up">
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight flex items-center gap-3">
   <img
-    src="src/components/logoucmas.png" // or use `import logo from 'src/components/logoucmas.png';`
+    src="./src/assets/logoucmas.png" // or use `import logo from 'src/components/logoucmas.png';`
     alt="Small Logo"
     className="h-[96px] w-[300px]"
   />
@@ -83,7 +83,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-[#FFD60A]/20 rounded-full animate-pulse"></div>
               <div className="absolute inset-4 bg-[#FFD60A]/10 rounded-full animate-spin-slow"></div>
               <img
-    src="src/assets/girl.png" // Replace with your image path or import
+    src="./src/assets/girl.png" // Replace with your image path or import
     alt="Floating Image"
     className="absolute top-1/2 left-1/2 w-33  h-33 object-contain transform -translate-x-1/2 -translate-y-1/2 
                transition-transform duration-500 hover:scale-110 animate-float-soft rounded-xl "

@@ -71,20 +71,20 @@ const Contact = () => {
   const testimonials = [
     {
       name: 'Bibhu Prasad Mangaraj',
-      image: 'src/assets/user.png ',
+      image: './src/assets/user.png ',
       rating: 5,
       text: 'One of the best brain exercise system.',
     },
     {
       name: 'SajuV Joseph',
-      image: 'src/assets/user.png ',
+      image: './src/assets/user.png ',
       rating: 5,
       text: 'UCMAS is an excellent programme for children ESP in maths.. My kids have had considerable ease to do maths since attending Ucmas.',
     },
    
     {
       name: 'Sneha',
-      image: 'src/assets/user.png ',
+      image: './src/assets/user.png ',
       rating: 5,
       text: 'Excellent... For brain development',
     }
