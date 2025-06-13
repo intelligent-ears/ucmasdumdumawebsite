@@ -1,12 +1,10 @@
 
-import { Calculator, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Calculator, Phone, Mail, MapPin, Facebook, Instagram} from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Youtube, href: '#', label: 'YouTube' }
+    { icon: Facebook, href: 'https://www.facebook.com/ucmasdumduma', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/ucmas_dumduma/', label: 'Instagram' },
   ];
 
   const quickLinks = [
