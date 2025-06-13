@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle, Star, Quote } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 
 
 const Contact = () => {
@@ -309,11 +309,12 @@ const Contact = () => {
                 <p className="text-white/80 mb-4">
                   
                 </p>
-                <Link to="https://maps.app.goo.gl/gptER4tHTc1LkrgGA">
-                <button className="bg-[#FFD60A] text-[#03045E] px-6 py-2 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105">
+
+                <button className="bg-[#FFD60A] text-[#03045E] px-6 py-2 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105"
+                onClick={() => window.open('https://maps.app.goo.gl/gptER4tHTc1LkrgGA', '_blank')}>
                   Get Directions
                 </button>
-                </Link>
+
               </div>
             </div>
 
@@ -458,11 +459,12 @@ const Contact = () => {
               Book your visit today and see the difference abacus learning can make.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-<Link to="https://ucmasdumduma.vercel.app/#contact">
-              <button className="bg-[#FFD60A] text-[#03045E] px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105">
-                Book visit
-              </button>
-            </Link>
+            <button 
+  className="bg-[#FFD60A] text-[#03045E] px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105"
+  onClick={() => window.open('https://ucmasdumduma.vercel.app/#contact', '_blank')}
+>
+  Book visit
+</button>
               <button className="border-2 border-[#FFD60A] text-[#FFD60A] px-8 py-3 rounded-full font-semibold hover:bg-[#FFD60A] hover:text-[#03045E] transition-all duration-300 transform hover:scale-105">
                 Download Brochure
               </button>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import { ArrowRight, Zap, Trophy, Users } from 'lucide-react';
 
 const Hero = () => {
@@ -41,12 +41,13 @@ const Hero = () => {
                 Develop lightning-fast calculation skills, enhanced concentration, and boost academic confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link to="https://ucmasdumduma.vercel.app/#contact">
-                <button className="group bg-[#FFD60A] text-[#03045E] px-8 py-4 rounded-full font-semibold hover:bg-[#FFD60A]/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center">
+
+                <button className="group bg-[#FFD60A] text-[#03045E] px-8 py-4 rounded-full font-semibold hover:bg-[#FFD60A]/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center"
+                 onClick={() => window.open('https://ucmasdumduma.vercel.app/#contact', '_blank')}>
                   Book Visit Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
-                </Link>
+
                 <button className="border-2 border-[#FFD60A] text-[#FFD60A] px-8 py-4 rounded-full font-semibold hover:bg-[#FFD60A] hover:text-[#03045E] transition-all duration-300 transform hover:scale-105">
                   Watch Demo
                 </button>
